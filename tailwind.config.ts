@@ -7,6 +7,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inter: "var(--font-inter)",
+      },
       colors: {
         green: {
           50: "#30AF5B",
