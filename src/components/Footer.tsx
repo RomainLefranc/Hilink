@@ -1,8 +1,9 @@
-import { COMMUNITY_LINKS, FOOTER_CONTACT_INFO, LEARN_MORE_LINKS, SOCIALS } from "@/src/data";
+import { COMMUNITY_LINKS, CONTACT_INFOS, LEARN_MORE_LINKS, SOCIAL_LINKS } from "@/src/data";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import logo from "@/public/hilink-logo.svg";
+
 function Footer() {
   return (
     <footer className="mx-auto mb-24 flex w-full h-full max-w-[1440px] flex-col gap-14 px-6 lg:px-20 3xl:px-0">
@@ -12,46 +13,49 @@ function Footer() {
         </Link>
 
         <div className="flex flex-col gap-5 lg:col-span-2">
-          <h4 className="bold-18 whitespace-nowrap">{LEARN_MORE_LINKS.title}</h4>
+          <h4 className="bold-18 whitespace-nowrap">Learn More</h4>
           <ul className="regular-14 flex flex-col gap-4 text-gray-30">
-            {LEARN_MORE_LINKS.links.map((link) => (
-              <Link href="/" key={link}>
-                {link}
-              </Link>
+            {LEARN_MORE_LINKS.map((link) => (
+              <li key={link.text}>
+                <Link href={link.href}>{link.text}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="flex flex-col gap-5 lg:col-span-2">
+          <h4 className="bold-18 whitespace-nowrap">Our Community</h4>
+          <ul className="regular-14 flex flex-col gap-4 text-gray-30">
+            {COMMUNITY_LINKS.map((link) => (
+              <li key={link.text}>
+                <Link href={link.href}>{link.text}</Link>
+              </li>
             ))}
           </ul>
         </div>
 
         <div className="flex flex-col gap-5 lg:col-span-2">
-          <h4 className="bold-18 whitespace-nowrap">{COMMUNITY_LINKS.title}</h4>
+          <h4 className="bold-18 whitespace-nowrap">Contact Us</h4>
           <ul className="regular-14 flex flex-col gap-4 text-gray-30">
-            {COMMUNITY_LINKS.links.map((link) => (
-              <Link href="/" key={link}>
-                {link}
-              </Link>
+            {CONTACT_INFOS.map((link) => (
+              <li key={link.label}>
+                <div className="flex gap-4 md:flex-col lg:flex-row">
+                  <p className="whitespace-nowrap">{link.label}:</p>
+                  <p className="font-semibold whitespace-nowrap text-blue-70">{link.value}</p>
+                </div>
+              </li>
             ))}
           </ul>
         </div>
 
         <div className="flex flex-col gap-5 lg:col-span-2">
-          <h4 className="bold-18 whitespace-nowrap">{FOOTER_CONTACT_INFO.title}</h4>
-          <ul className="regular-14 flex flex-col gap-4 text-gray-30">
-            {FOOTER_CONTACT_INFO.links.map((link) => (
-              <Link href="/" key={link.label} className="flex gap-4 md:flex-col lg:flex-row">
-                <p className="whitespace-nowrap">{link.label}:</p>
-                <p className="medium-14 whitespace-nowrap text-blue-70">{link.value}</p>
-              </Link>
-            ))}
-          </ul>
-        </div>
-
-        <div className="flex flex-col gap-5 lg:col-span-2">
-          <h4 className="bold-18 whitespace-nowrap">{SOCIALS.title}</h4>
+          <h4 className="bold-18 whitespace-nowrap">Social</h4>
           <ul className="regular-14 flex gap-4 text-gray-30">
-            {SOCIALS.links.map((link) => (
-              <Link href="/" key={link}>
-                <Image src={link} alt="logo" width={24} height={24} />
-              </Link>
+            {SOCIAL_LINKS.map((link, i) => (
+              <li key={i}>
+                <Link href={link.href}>
+                  <Image src={link.icon} alt={link.alt} />
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
