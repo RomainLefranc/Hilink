@@ -1,6 +1,6 @@
 import foldedMapSvg from "@/public/folded-map.svg";
 import Image from "next/image";
-import { PEOPLE_URL } from "../data";
+import { PEOPLE_URL } from "@/src/data";
 import quoteSvg from "@/public/quote.svg";
 
 type CampSiteProps = {

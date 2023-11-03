@@ -1,6 +1,5 @@
 import { COMMUNITY_LINKS, CONTACT_INFOS, LEARN_MORE_LINKS, SOCIAL_LINKS } from "@/src/data";
 import Link from "next/link";
-import React from "react";
 import Image from "next/image";
 import logo from "@/public/hilink-logo.svg";
 

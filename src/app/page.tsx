@@ -1,6 +1,7 @@
 import Camp from "@/src/components/Camp";
 import Hero from "@/src/components/Hero";
-import Guide from "../components/Guide";
+import Guide from "@/src/components/Guide";
+import Features from "@/src/components/Features";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Camp />
       <Guide />
+      <Features />
     </>
   );
 }
